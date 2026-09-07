@@ -46,7 +46,7 @@ pipeline {
 				if git diff --cached --quiet; then
 					echo "No changes to commit"
 				else
-					git commit -m "Update React image to v1.0.${BUIILD_NUMBER}"
+					git commit -m "Update React image to v1.0.${BUILD_NUMBER}"
 					git push origin main
 				fi
 			 """
