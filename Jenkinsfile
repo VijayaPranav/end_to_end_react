@@ -39,7 +39,7 @@ pipeline {
 			sh """ rm -rf gitops
 				git clone https://${GITHUB_USERNAME}:${GITHUB_TOKEN}@github.com/VijayaPranav/end_to_end_react_gitops gitops
 				cd gitops
-				sed -i "s|image: vijayapranav/end_to_end_react_app:.*image: vijayapranav/end_to_end_react_app:v1.0.${BUILD_NUMBER}|" deployment.yaml
+				sed -i "s|image: vijayapranav/end_to_end_react_app:.*|image: vijayapranav/end_to_end_react_app:v1.0.${BUILD_NUMBER}|" deployment.yaml
 				git config user.name "Jenkins"
 				git config user.email "jenkins@localhost"
 				git add deployment.yaml
