@@ -2,7 +2,28 @@
 
 An end-to-end DevOps and GitOps pipeline for deploying a containerized React application to a K3s Kubernetes cluster.
 The project implements Continuous Integration using Jenkins and Continuous Delivery using a GitOps workflow with GitHub and Argo CD.
+## Demo
 
+The following screenshots demonstrate the complete end-to-end CI/CD and GitOps workflow.
+
+### 1. Jenkins CI/CD Pipeline
+
+Jenkins successfully executes the complete pipeline, including dependency installation, React build, Docker image creation, Docker Hub push, and GitOps repository update.
+
+![Jenkins Pipeline](docs/screenshots/01-jenkins-pipeline.png)
+
+---
+
+### 2. Docker Hub Image
+
+The successfully built Docker image is published to Docker Hub using a versioned tag based on the Jenkins build number.
+
+![Docker Hub Image](docs/screenshots/02-dockerhub-image.png)
+
+Example:
+
+```text
+vijayapranav/end_to_end_react_app:v1.0.X
 ---
 
 ## Architecture
