@@ -20,16 +20,47 @@ The successfully built Docker image is published to Docker Hub using a versioned
 
 ![Docker Hub Image](docs/screenshots/02-dockerhub-image.png)
 
-Example:
+Example: vijayapranav/end_to_end_react_app:v1.0.X
 
-```text
-vijayapranav/end_to_end_react_app:v1.0.X
+
+
 ---
+
+### 3. GitOps Repository
+
+Jenkins automatically updates the Docker image version in the GitOps repository, which serves as the single source of truth for the Kubernetes deployment.
+
+![GitOps Repository](docs/screenshots/03-gitops-repository.png)
+
+---
+
+### 4. Argo CD
+
+Argo CD detects the GitOps repository change and synchronizes the updated application state with the K3s cluster.
+
+![Argo CD](docs/screenshots/04-argocd.png)
+
+---
+
+### 5. Kubernetes / K3s
+
+The updated Docker image is deployed successfully to the K3s Kubernetes cluster, with the new application pods running.
+
+![Kubernetes Deployment](docs/screenshots/05-kubernetes.png)
+
+---
+
+### 6. React Application
+
+The final UI change is visible through the Traefik Ingress, confirming successful end-to-end deployment.
+
+![React Application](docs/screenshots/06-reactapp.png)
 
 ## Architecture
 
 ```text
                          CI / CD + GitOps Pipeline
+
 
  Developer
      |
